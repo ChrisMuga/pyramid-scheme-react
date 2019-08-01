@@ -5,7 +5,7 @@ export function allUsersReducer(state = [], action) {
     case actionTypes.FETCH_ALL_USERS:
       return {
         ...state,
-        allUsers: action.payload
+        users: action.payload
       }
 
     default:
