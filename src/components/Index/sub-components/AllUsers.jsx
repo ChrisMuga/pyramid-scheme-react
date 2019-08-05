@@ -9,23 +9,22 @@ function AllUsers(props) {
   let allUsers = users.users
   useEffect(() => fetchAllUsers(), [fetchAllUsers])
   let users_
-  if (allUsers) {
+  if (allUsers && allUsers.code !== 0) {
     users_ = allUsers.map(user => {
       return (
         <div className="alert alert-success" key={user.id}>
-         <h4>{user.first_name} {user.last_name}</h4>
-         <hr/>
-         {user.email_address}
-         <br/>
-         {user.phone_number}
-         <p>
-           <h5 className = "text-right">{user.id}</h5>
-         </p>
+          <h4>{user.first_name} {user.last_name}</h4>
+          <hr/>
+          {user.email_address}
+          <br/>
+          {user.phone_number}
+          <h5 className = "text-right">{user.id}</h5>
         </div>
       )
     })
-  } else {
-    users_ = <div className="alert alert-danger">Nothing to see here....</div>
+  } else if(allUsers && allUsers.code === 0) {
+    console.log(allUsers.code)
+    users_ = <div className="alert alert-danger">{allUsers.msg.error.message}</div>
   }
   return (
     <div className="col-md-6">

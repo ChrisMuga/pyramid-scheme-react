@@ -12,7 +12,11 @@ export function fetchAllUsersAction() {
         dispatch(fetchAllUsers(actionTypes.FETCH_ALL_USERS, users))
       })
       .catch(error => {
-        console.log(error)
+        const payload = {
+          code: 0,
+          msg: {error}
+        }
+        dispatch(errorFetchingAllUsers(actionTypes.ERROR_FETCHING_ALL_USERS, payload))
       })
   }
 }
@@ -24,3 +28,10 @@ export function fetchAllUsers(type, payload) {
   }
 }
 
+
+export function errorFetchingAllUsers(type, payload){
+  return {
+    type,
+    payload
+  }
+}
