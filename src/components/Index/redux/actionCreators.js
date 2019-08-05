@@ -5,7 +5,8 @@ import {endpoints} from "../../../config"
 export function fetchAllUsersAction() {
   
   return dispatch => {
-    fetch(endpoints.people)
+    console.log(endpoints.fetchUsers)
+    fetch(endpoints.fetchUsers)
       .then(users => users.json())
       .then(users => {
         dispatch(fetchAllUsers(actionTypes.FETCH_ALL_USERS, users))
@@ -22,3 +23,4 @@ export function fetchAllUsers(type, payload) {
     payload
   }
 }
+

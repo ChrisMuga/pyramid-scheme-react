@@ -13,7 +13,14 @@ function AllUsers(props) {
     users_ = allUsers.map(user => {
       return (
         <div className="alert alert-success" key={user.id}>
-          {user.firstName || user.organizationName}
+         <h4>{user.first_name} {user.last_name}</h4>
+         <hr/>
+         {user.email_address}
+         <br/>
+         {user.phone_number}
+         <p>
+           <h5 className = "text-right">{user.id}</h5>
+         </p>
         </div>
       )
     })
