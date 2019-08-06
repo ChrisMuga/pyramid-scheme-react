@@ -1,3 +1,8 @@
 .mid-level{
-    margin-top: 26.33333vh;
+    margin-top: 20.33333vh;
+}
+
+.float-right{
+    float: right;
+    right: 0;
 }

@@ -12,6 +12,11 @@ export function allUsersReducer(state = [], action) {
         ...state,
         users: action.payload
       }
+    case actionTypes.REGISTER_USER:
+      return {
+        ...state,
+        newUser: action.payload
+      }
     default:
       return state
   }

@@ -1,15 +1,15 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import "./Navbar.css"
 // components
 import RegisterUser from "../../RegisterUser/index"
 import MainComponent from "../../MainComponent/index"
 function Navbar() {
   return (
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="/">
-          Navbar
+          Pyramid Scheme
         </a>
         <button
           className="navbar-toggler"
