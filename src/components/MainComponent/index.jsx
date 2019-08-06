@@ -1,11 +1,8 @@
 import React from "react"
-
-import Navbar from "./sub-components/Navbar.jsx"
-import AllUsers from "./sub-components/AllUsers.jsx"
+import AllUsers from "./sub-components/AllUsers"
 function MainComponent() {
   return (
     <div className="container-fluid">
-      <Navbar />
       <div className="row">
         <AllUsers />
       </div>
