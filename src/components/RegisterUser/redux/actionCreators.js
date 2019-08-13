@@ -15,16 +15,16 @@ export function registerNewUserAction(userData) {
         phone_number: phoneNumber
     }
     fetch(endpoints.newUser, {
-        method: 'POST',
+        method: 'post',
         body:    JSON.stringify(body),
-        headers: { 'Content-Type': 'application/json' },
-        mode: 'cors'
+        // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     })
       .then(user => user.json())
       .then(user => {
         dispatch(registerUser(actionTypes.REGISTER_USER, user))
       })
       .catch(error => {
+        console.log('error occurred', error);
         const payload = {
           code: 0,
           msg: {error}
